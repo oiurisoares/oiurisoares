@@ -22,5 +22,5 @@
   <h3 align='left'>Languages, Frameworks and Tools:<h3/>
   <img src="https://skillicons.dev/icons?i=git,css,html,javascript,nodejs,github,vscode,java,mysql" />
   <br>
-  <img src="https://skillicons.dev/icons?i=react,androidstudio,express,dotnet" />
+  <img src="https://skillicons.dev/icons?i=react,androidstudio,express,dotnet,discordjs" />
 </div>
