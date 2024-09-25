@@ -5,7 +5,7 @@
   <img align="right" width="450" 
     src="https://github-readme-stats.vercel.app/api?username=oiurisoares&theme=radical&show_icons=true&border_color=E13C81" />
   <p align='left'>
-    Java | Android & JavaScript | NodeJs Developer and Computer Technician. Currently working as Full-stack Developer.
+    Java | Android | JavaScript | TypeScript | NodeJs Developer and Computer Technician. Currently working as Full-stack Developer.
   <p/>
   <p align='left'>
     - 💻 Full-Stack developer
