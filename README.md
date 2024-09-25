@@ -5,7 +5,7 @@
   <img align="right" width="450" 
     src="https://github-readme-stats.vercel.app/api?username=oiurisoares&theme=radical&show_icons=true&border_color=E13C81" />
   <p align='left'>
-    Java | Android & JavaScript | NodeJs Developer and Computer Technician. Currently working as Full-stack Developer at <a href='https://www.linkedin.com/company/cais-hub/'>Cais Hub</a>.
+    Java | Android & JavaScript | NodeJs Developer and Computer Technician. Currently working as Full-stack Developer.
   <p/>
   <p align='left'>
     - 💻 Full-Stack developer
@@ -22,5 +22,5 @@
   <h3 align='left'>Languages, Frameworks and Tools:<h3/>
   <img src="https://skillicons.dev/icons?i=git,css,html,javascript,nodejs,github,vscode,java,mysql" />
   <br>
-  <img src="https://skillicons.dev/icons?i=react,androidstudio,express,dotnet,discordjs,typescript" />
+  <img src="https://skillicons.dev/icons?i=react,androidstudio,express,dotnet,discordjs,typescript,prisma" />
 </div>
