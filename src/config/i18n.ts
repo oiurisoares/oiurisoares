@@ -36,7 +36,7 @@ i18n.use(Backend)
         },
         keySeparator: ".",
         nonExplicitSupportedLngs: false,
-        ns: ["home"], // Definindo quais namespaces usar
+        ns: ["home"],
         supportedLngs: ["en", "pt",],
     });
 
