@@ -1,11 +1,11 @@
+import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
-import { Routes } from "react-router-dom";
-import WaveLoading from "../components/WaveLoading";
+import Loading from "../components/Loading";
 
-const Loading = () => <WaveLoading />
+const LoadingSpinner = () => <Loading />;
 const AppRoutes = () => {
     return (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<LoadingSpinner />}>
             <Routes>
             </Routes>
         </Suspense>
