@@ -20,7 +20,7 @@ i18n.use(Backend)
             }
         },
         debug: true,
-        defaultNS: "home",
+        defaultNS: "landing-page",
         detection: {
             order: [
                 "navigator", "querystring", "cookie", "localStorage",
@@ -36,7 +36,7 @@ i18n.use(Backend)
         },
         keySeparator: ".",
         nonExplicitSupportedLngs: false,
-        ns: ["home"],
+        ns: ["landing-page"],
         supportedLngs: ["en", "pt",],
     });
 
