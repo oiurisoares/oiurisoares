@@ -25,13 +25,13 @@ const LandingPage: React.FC = () => {
 
                     <div className="hero-overlay"></div>
 
-                    <div className='hero-content'>
+                    <div className='hero-content fade-in'>
                         <h2 className='hero-subtitle'>PORTFOLIO</h2>
                         <h1 className='hero-title'>Iuri Soares</h1>
                         <h2 className='hero-description'>FULL-STACK DEVELOPER</h2>
                     </div>
 
-                    <button className="hero-button" type='button'>CONHECER</button>
+                    <button className="hero-button fade-in" type='button'>CONHECER</button>
 
                     <footer className="hero-footer" ref={loadingRef}>
                         <SocialMediaLinks />

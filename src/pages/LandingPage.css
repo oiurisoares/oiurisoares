@@ -61,7 +61,7 @@ main {
             font-family: "Poppins", sans-serif;
             font-size: 96px;
             font-weight: 600;
-            letter-spacing: 16px;
+            letter-spacing: 12px;
             line-height: 1;
         }
 
@@ -95,6 +95,7 @@ main {
     }
 
     .hero-button:hover {
+        border-width: 1.5px;
         color: white;
         transition: all 0.3s ease-in-out;
     }
@@ -107,6 +108,23 @@ main {
         text-align: center;
         width: 100%;
         z-index: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) !important;
     }
 }
 
