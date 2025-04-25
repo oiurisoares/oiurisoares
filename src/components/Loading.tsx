@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
+import useScrollReveal from '../hooks/ScrollReveal';
 
 const fadeAnimation = keyframes`
   0% { background-color: #69717d; }
@@ -50,9 +52,12 @@ const StyledBlade = styled.div.withConfig({
   `}`;
 
 const Loading = () => {
+  const loadingRef = useRef<HTMLDivElement>(null);
+  useScrollReveal([loadingRef]);
+
   return (
     <StyledWrapper>
-      <div className="spinner">
+      <div className="spinner" ref={loadingRef}>
         {Array.from({ length: 12 }).map((_, i) => (
           <StyledBlade index={i} key={i} />
         ))}
