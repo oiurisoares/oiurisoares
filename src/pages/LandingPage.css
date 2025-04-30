@@ -3,8 +3,36 @@
     user-select: none;
 }
 
+.color-black {
+    color: #000;
+}
+
+.subtitle {
+    color: #888888;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.9vw;
+    font-weight: 700;
+    letter-spacing: 0.16vw;
+    line-height: 1;
+}
+
+.title {
+    font-family: "Poppins", sans-serif;
+    font-size: 7.5vw;
+    font-weight: 600;
+    letter-spacing: 0.94vw;
+    line-height: 1;
+}
+
+.title-medium {
+    font-size: 3.75vw;
+    letter-spacing: 0.47vw;
+}
+
 main {
     .landing-page__hero {
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         overflow: hidden;
         position: relative;
@@ -15,8 +43,7 @@ main {
         height: 100%;
         object-fit: cover;
         position: absolute;
-        transition: filter 0.5s ease,
-            transform 0.5s ease;
+        transition: filter 0.5s ease, transform 0.5s ease;
         transform: scale(1.05);
         width: 100%;
         z-index: -1;
@@ -48,27 +75,10 @@ main {
         text-align: center;
         z-index: 1;
 
-        .hero-subtitle {
-            color: #888888;
-            font-family: "Poppins", sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            line-height: 1;
-        }
-
-        .hero-title {
-            font-family: "Poppins", sans-serif;
-            font-size: 96px;
-            font-weight: 600;
-            letter-spacing: 12px;
-            line-height: 1;
-        }
-
         .hero-description {
             font-family: "Lora", sans-serif;
-            font-size: 20px;
-            letter-spacing: 9px;
+            font-size: 1.56vw;
+            letter-spacing: 0.7vw;
             font-weight: 200;
             line-height: 1;
         }
@@ -79,13 +89,13 @@ main {
         border-radius: 8px;
         border-style: solid;
         border-width: 1px;
-        bottom: 32%;
+        bottom: 30%;
         cursor: pointer;
         font-family: "Lora", sans-serif;
-        font-size: 14px;
+        font-size: 1.1vw;
         font-weight: 400;
         left: 50%;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08vw;
         line-height: 1;
         min-height: 52px;
         padding: 12px 24px;
@@ -109,6 +119,58 @@ main {
         width: 100%;
         z-index: 1;
     }
+
+    .landing-page__about {
+        background-color: white;
+        display: flex;
+        height: auto;
+        min-height: 100vh;
+
+        .about-content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            padding-bottom: 10%;
+            padding-top: 10%;
+            text-align: center;
+
+            .about {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                height: auto;
+                justify-content: space-between;
+                margin-top: 5%;
+                width: 65%;
+
+                .about-icon {
+                    border-radius: 50%;
+                    height: auto;
+                    margin: 0 12px 0 24px;
+                    object-fit: cover;
+                    width: 18%;
+                }
+
+                p {
+                    color: #888888;
+                    font-family: "Lora", sans-serif;
+                    font-size: 1.56vw;
+                    font-weight: 400;
+                    margin: 0 24px 0 12px;
+                    text-align: left;
+                }
+            }
+
+            .tools {
+                display: flex;
+                flex-direction: column;
+                padding-top: 5%;
+                text-align: start;
+                width: 65%;
+            }
+        }
+    }
 }
 
 .fade-in {
@@ -129,18 +191,24 @@ main {
 }
 
 @media (max-width: 768px) {
+    .subtitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .title {
+        font-size: 48px;
+        letter-spacing: 6px;
+    }
+
+    .title-medium {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+
     main {
         .landing-page__hero {
-            .hero-subtitle {
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-
-            .hero-title {
-                font-size: 48px;
-                letter-spacing: 6px;
-            }
-
             .hero-description {
                 font-size: 12px;
                 letter-spacing: 4px;
@@ -153,6 +221,33 @@ main {
             letter-spacing: 1px;
             min-height: 42px;
             padding: 8px 16px;
+        }
+
+        .landing-page__about {
+            .about-content {
+                padding-top: 15%;
+
+                .about {
+                    flex-direction: column;
+                    width: 80%;
+
+                    .about-icon {
+                        margin: 12px 0;
+                        width: 50%;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        margin: 0;
+                        text-align: center;
+                    }
+                }
+
+                .tools {
+                    padding-top: 10%;
+                    width: 80%;
+                }
+            }
         }
     }
 }
