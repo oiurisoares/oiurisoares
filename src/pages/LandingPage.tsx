@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 import banner from '../assets/img/banner.png';
 import i18n from '../config/i18n';
 import SocialMediaLinks from '../components/SocialMediaLinks';
@@ -10,7 +10,6 @@ import Icon from '../assets/img/icon.png';
 
 const LandingPage: React.FC = () => {
     const [language] = useState<string>();
-    const { t } = useTranslation();
 
     useEffect(() => {
         i18n.loadNamespaces("landing-page").catch((error: Error) => {
@@ -69,7 +68,7 @@ const LandingPage: React.FC = () => {
                         className="hero-button fade-in"
                         onClick={() => scrollToRef(aboutSectionTarget)}
                         type='button'>
-                        {t('know-more')}
+                        <Trans i18nKey="know-more" />
                     </button>
 
                     <footer className="hero-footer fade-in" ref={loadingRef}>
@@ -79,17 +78,23 @@ const LandingPage: React.FC = () => {
 
                 <section className='landing-page__about no-select' ref={aboutSectionTarget}>
                     <div className='about-content' ref={loadingRef}>
-                        <h2 className='subtitle'>{t('about')}</h2>
-                        <h1 className='title title-medium color-black'>{t('who-am-i')}</h1>
+                        <h2 className='subtitle'>
+                            <Trans i18nKey="about" />
+                        </h2>
+                        <h1 className='title title-medium color-black'>
+                            <Trans i18nKey="who-am-i" />
+                        </h1>
 
                         <div className='about' ref={loadingRef}>
                             <img alt='icon' className='about-icon' src={Icon} />
 
-                            <p>{t('about-me')}</p>
+                            <p><Trans i18nKey="about-me" /></p>
                         </div>
 
                         <div className='tools' ref={loadingRef}>
-                            <h2 className='subtitle'>{t('tools')}</h2>
+                            <h2 className='subtitle'>
+                                <Trans i18nKey="tools" />
+                            </h2>
                             <br />
                             <p>
                                 <a href="https://skillicons.dev" title="Skillicons">
