@@ -5,9 +5,9 @@ const useScrollReveal = <T extends HTMLElement>(refs: RefObject<T>[], config = {
     useEffect(() => {
         if (refs.length > 0) {
             const scrollReveal = ScrollReveal({
-                delay: 200,
+                delay: 500,
                 distance: "50px",
-                duration: 500,
+                duration: 300,
                 easing: "ease-in-out",
                 origin: "bottom",
                 reset: false,
