@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react'
  * @returns {boolean} - True if the viewport width matches.
  */
 export const useIsMobileScreen = (): boolean => {
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(
+        window.innerWidth < 768
+    );
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768)
         handleResize()
