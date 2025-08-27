@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { fadeSlideDownVariants } from "../utils/animation";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 /**
  * Dropdown component with animation and outside click handling.
@@ -27,7 +27,26 @@ const DropdownToggle = styled(motion.button)`
     transition: background 0.2s;
     width: auto;`;
 
-const DropdownMenu = styled(motion.ul)`
+const DropdownToggleStatic = styled.button`
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    padding: 10px 12px;
+    width: auto;`;
+
+interface DropdownMenuProps {
+    $isMobile?: boolean;
+    $position?: "left" | "right";
+}
+
+const DropdownMenu = styled(motion.ul).withConfig({
+    shouldForwardProp: (prop) => (
+        prop !== "$isMobile" && prop !== "$position")
+}) <DropdownMenuProps >`
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.15);
@@ -44,7 +63,33 @@ const DropdownMenu = styled(motion.ul)`
     top: 100%;
     width: max-content;
     white-space: nowrap;
-    z-index: 10;`;
+    z-index: 10;
+    
+    ${(props) => props.$position === "left"
+        ? css`
+            margin-left: 28px;
+            left: 0;
+            text-align: start;`
+        : css`
+            margin-right: 28px;
+            right: 0;
+            text-align: end;`}
+
+    ${(props) => props.$isMobile &&
+        css`
+            align-items: center;
+            border-radius: 12px; 
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            left: 50%;
+            max-width: 400px;
+            padding: 20px;
+            position: fixed;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;`}`;
 
 const DropdownItemStyled = styled.li`
     cursor: pointer;
@@ -57,17 +102,26 @@ const DropdownItemStyled = styled.li`
     }`;
 
 export interface DropdownItem {
-    action: () => void;
+    action?: () => void;
     key: string;
-    label: string;
+    label: React.ReactNode;
 };
 
 interface DropdownProps {
+    disableMotion?: boolean;
+    isMobile?: boolean;
     items: DropdownItem[];
+    position?: "left" | "right";
     trigger?: ReactNode;
 };
 
-const Dropdown: React.FC<DropdownProps> = ({ items, trigger }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+    disableMotion = false,
+    isMobile = false,
+    items,
+    position = 'right',
+    trigger
+}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -88,19 +142,25 @@ const Dropdown: React.FC<DropdownProps> = ({ items, trigger }) => {
 
     const handleSelect = (item: DropdownItem) => {
         setIsOpen(false);
-        item.action();
+        if (item.action) item.action();
     };
 
     return (
         <DropdownWrapper ref={wrapperRef}>
-            <DropdownToggle
-                animate={{ rotate: isOpen ? 90 : 0 }}
-                onClick={() => setIsOpen((prev) => !prev)}
-                transition={{ duration: 0.2 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                {trigger || (isOpen ? <IoClose size={32} /> : <IoMenu size={32} />)}
-            </DropdownToggle>
+            {disableMotion ? (
+                <DropdownToggleStatic onClick={() => setIsOpen((prev) => !prev)}>
+                    {trigger || (isOpen ? <IoClose size={32} /> : <IoMenu size={32} />)}
+                </DropdownToggleStatic>
+            ) : (
+                <DropdownToggle
+                    animate={{ rotate: isOpen ? 90 : 0 }}
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    transition={{ duration: 0.2 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    {trigger || (isOpen ? <IoClose size={32} /> : <IoMenu size={32} />)}
+                </DropdownToggle>
+            )}
 
             <AnimatePresence>
                 {isOpen && (
@@ -108,6 +168,8 @@ const Dropdown: React.FC<DropdownProps> = ({ items, trigger }) => {
                         animate="visible"
                         exit="exit"
                         initial="hidden"
+                        $isMobile={isMobile}
+                        $position={position}
                         transition={{ duration: 0.1 }}
                         variants={fadeSlideDownVariants}
                     >

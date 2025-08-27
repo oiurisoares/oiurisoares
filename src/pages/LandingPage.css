@@ -98,16 +98,39 @@ main {
         letter-spacing: 0.08vw;
         line-height: 1;
         min-height: 52px;
+        outline: none;
+        overflow: hidden;
         padding: 12px 24px;
         position: absolute;
         transform: translateX(-50%);
+        transition: all 0.2s ease;
         z-index: 1;
     }
 
+    .hero-button::after {
+        background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.25) 0%,
+                rgba(255, 255, 255, 0) 70%);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: scale(0);
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
     .hero-button:hover {
+        background: #292929;
+        border-color: #666666;
         border-width: 1.5px;
-        color: white;
+        text-shadow: 0 0 1px #ffffff, 0 0 5px #ffffff;
         transition: all 0.3s ease-in-out;
+    }
+
+    .hero-button:hover::after {
+        transform: scale(2);
     }
 
     .hero-footer {
@@ -121,9 +144,9 @@ main {
     }
 
     .landing-page__about {
-        background-color: white;
+        background-color: #EBEBEB;
         display: flex;
-        height: auto;
+        height: fit-content;
         min-height: 100vh;
 
         .about-content {
@@ -132,7 +155,7 @@ main {
             flex-direction: column;
             height: auto;
             padding-bottom: 10%;
-            padding-top: 10%;
+            padding-top: 5%;
             text-align: center;
 
             .about {
@@ -225,7 +248,7 @@ main {
 
         .landing-page__about {
             .about-content {
-                padding-top: 15%;
+                padding-top: 10%;
 
                 .about {
                     flex-direction: column;
