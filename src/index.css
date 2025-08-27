@@ -1,7 +1,3 @@
-.tailwind-scope {
-  @import "tailwindcss";
-}
-
 ::-webkit-scrollbar {
   background-color: transparent;
   display: none;
