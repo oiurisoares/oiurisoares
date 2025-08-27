@@ -1,6 +1,12 @@
 import { RefObject, useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 
+/**
+ * Custom hook to apply ScrollReveal animations to multiple refs.
+ * --
+ * @param refs Array of refs to be revealed on scroll
+ * @param config Optional configuration for ScrollReveal
+ */
 const useScrollReveal = <T extends HTMLElement>(refs: RefObject<T>[], config = {}) => {
     useEffect(() => {
         if (refs.length > 0) {
