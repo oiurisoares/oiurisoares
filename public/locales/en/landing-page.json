@@ -1,7 +1,10 @@
 {
     "about": "ABOUT",
-    "about-me": "I'm a student of Systems Analysis and Development, been in the tech field for about 3 years now. I graduated as a Computer Technician from IFMA, and right now I’m working as a freelancer, creating complete and customized solutions for web and mobile systems.",
+    "about-me": "I'm a student of Systems Analysis and Development, been in the tech area for about 3 years now.\n\n I graduated as a Computer Technician from IFMA, and right now I’m working as a freelancer, creating complete and customized solutions for web and mobile systems.",
+    "hero-description": "FULL-STACK DEVELOPER",
     "know-more": "KNOW MORE",
+    "subtitle": "PORTFOLIO",
+    "title": "Iuri Soares",
     "tools": "Tools with which I have experience.",
     "who-am-i": "Who am I?"
 }

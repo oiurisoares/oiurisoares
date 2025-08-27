@@ -1,7 +1,10 @@
 {
     "about": "SOBRE",
-    "about-me": "Estudante de Análise e Desenvolvimento de Sistemas, atuando na área de tecnologia há cerca de 3 anos. <br /> Formado como técnico em Informática pelo IFMA, atualmente trabalho como freelancer, desenvolvendo soluções completas e personalizadas para sistemas web e mobile.",
+    "about-me": "Estudante de Análise e Desenvolvimento de Sistemas, atuando na área de tecnologia há cerca de 3 anos.\n\n Formado como técnico em Informática pelo IFMA, atualmente trabalho como freelancer, desenvolvendo soluções completas e personalizadas para sistemas web e mobile.",
+    "hero-description": "FULL-STACK DEVELOPER",
     "know-more": "CONHECER",
+    "subtitle": "PORTFOLIO",
+    "title": "Iuri Soares",
     "tools": "Ferramentas com as quais tenho experiência.",
     "who-am-i": "Quem sou eu?"
 }
