@@ -1,0 +1,59 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+body {
+  @apply font-sans min-h-screen w-full leading-relaxed;
+}
+
+button,
+input,
+select,
+textarea {
+  @apply bg-transparent border-none p-0;
+  color: inherit;
+  font: inherit;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #121212;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+}
