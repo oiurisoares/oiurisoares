@@ -50,7 +50,7 @@ i18n.use(Backend)
             }
         },
         debug: true,
-        defaultNS: "",
+        defaultNS: "layout",
         detection: {
             order: [
                 "navigator", "querystring", "cookie", "localStorage",
@@ -67,7 +67,9 @@ i18n.use(Backend)
         keySeparator: ".",
         lng: localStorage.getItem("i18nextLng") || "en",
         nonExplicitSupportedLngs: false,
-        ns: [],
+        ns: [
+            "layout"
+        ],
         react: { useSuspense: true },
         supportedLngs: ["en", "pt",],
     });
